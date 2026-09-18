@@ -63,13 +63,17 @@ export default function Header() {
 
   return (
     <>
-    <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
-        scrolled
-          ? "bg-ink/95 backdrop-blur border-ink-line"
-          : "bg-ink border-transparent"
-      }`}
-    >
+    <header className="fixed inset-x-0 top-0 z-50">
+      {/* backdrop-blur lives on this inner div, not on <header>, so MobileMenu
+         (rendered as a direct child of header below) never sits inside a
+         filtered/transformed ancestor — that breaks its `fixed` positioning */}
+      <div
+        className={`border-b transition-colors duration-300 ${
+          scrolled
+            ? "bg-ink/95 backdrop-blur border-ink-line"
+            : "bg-ink border-transparent"
+        }`}
+      >
       <div className="container-content flex h-16 items-center justify-between md:h-20">
         <Link href="/" className="font-display text-xl tracking-tight text-paper md:text-2xl">
           Gambler<span className="text-moss-500">Live</span>
@@ -119,6 +123,7 @@ export default function Header() {
             <path d="M3 6h18M3 12h18M3 18h18" strokeLinecap="round" />
           </svg>
         </button>
+      </div>
       </div>
 
       <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} nav={NAV} />
