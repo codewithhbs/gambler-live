@@ -62,8 +62,9 @@ export default function Header() {
   }, []);
 
   return (
+    <>
     <header
-      className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
         scrolled
           ? "bg-ink/95 backdrop-blur border-ink-line"
           : "bg-ink border-transparent"
@@ -122,5 +123,8 @@ export default function Header() {
 
       <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} nav={NAV} />
     </header>
+    {/* spacer so page content doesn't sit under the fixed header */}
+    <div className="h-16 md:h-20" />
+    </>
   );
 }
