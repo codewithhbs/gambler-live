@@ -16,17 +16,17 @@ export default function ContactPage() {
           </p>
 
           <dl className="mt-10 space-y-5 border-t border-ink-line pt-6 text-sm">
-            <div>
+            {/* <div>
               <dt className="text-clay">Editorial inquiries</dt>
               <dd className="mt-0.5 text-bone">editorial@gamblerlive.com</dd>
             </div>
             <div>
               <dt className="text-clay">Partnership inquiries</dt>
               <dd className="mt-0.5 text-bone">partners@gamblerlive.com</dd>
-            </div>
+            </div> */}
             <div>
               <dt className="text-clay">Business inquiries</dt>
-              <dd className="mt-0.5 text-bone">business@gamblerlive.com</dd>
+              <dd className="mt-0.5 text-bone">contact@gamblerlive.com</dd>
             </div>
           </dl>
         </div>

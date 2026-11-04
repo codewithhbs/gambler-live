@@ -21,7 +21,7 @@ const sections = [
   },
   {
     heading: "Your rights",
-    body: "You can request access to, correction of, or deletion of your personal data by contacting us at editorial@gamblerlive.com.",
+    body: "You can request access to, correction of, or deletion of your personal data by contacting us at contact@gamblerlive.com.",
   },
 ];
 
