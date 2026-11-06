@@ -1,13 +1,15 @@
+import { pageMeta } from "@/lib/site";
 import CasinoRankingCard from "@/components/CasinoRankingCard";
 import SectionHeader from "@/components/SectionHeader";
 import ResponsibleGamblingNotice from "@/components/ResponsibleGamblingNotice";
 import { getCasinosByTag } from "@/data/casinos";
 
-export const metadata = {
-  title: "Best Crypto Casinos — Bitcoin & Ethereum Gambling",
+export const metadata = pageMeta({
+  title: "Best Crypto Casinos: Bitcoin, ETH & USDT",
   description:
-    "Casinos scored on crypto deposit and withdrawal speed, supported coins, and network fee transparency.",
-};
+    "Online casinos that accept Bitcoin, Ethereum, USDT and other cryptocurrencies, with supported coins, withdrawal limits and licensing details.",
+  path: "/crypto-casinos",
+});
 
 export default function CryptoCasinosPage() {
   const list = getCasinosByTag("crypto");
@@ -19,7 +21,7 @@ export default function CryptoCasinosPage() {
           <SectionHeader
             kicker="Crypto"
             title="Best crypto casinos"
-            description="Scored on confirmed withdrawal speed, supported coins, and whether network fees are disclosed clearly before you send funds."
+            description="Casinos that accept cryptocurrency deposits and withdrawals. Supported coins and limits for each operator are listed on its review page."
           />
           <div className="flex flex-wrap gap-2 text-sm text-clay">
             {["Bitcoin", "Ethereum", "USDT", "Litecoin"].map((coin) => (

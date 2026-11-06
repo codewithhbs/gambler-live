@@ -1,11 +1,14 @@
+import { pageMeta } from "@/lib/site";
 import GuideCard from "@/components/GuideCard";
 import SectionHeader from "@/components/SectionHeader";
 import { guides } from "@/data/guides";
 
-export const metadata = {
-  title: "Casino Guides — Bonuses, Payments & Safety",
-  description: "Long-form explainers on how casinos, bonuses and payments actually work.",
-};
+export const metadata = pageMeta({
+  title: "Casino Guides: Bonuses, Payments & Safety",
+  description:
+    "Practical online casino guides on wagering requirements, payment methods, licensing and safer play, written by the GamblerLive editorial team.",
+  path: "/guides",
+});
 
 export default function GuidesPage() {
   return (

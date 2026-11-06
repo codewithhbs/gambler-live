@@ -2,6 +2,9 @@ import { Newsreader, Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import { SITE_URL } from "@/lib/site";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 
 const display = Newsreader({
   subsets: ["latin"],
@@ -26,13 +29,18 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://www.gamblerlive.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "GamblerLive — Independent Online Casino Reviews & Rankings",
     template: "%s | GamblerLive",
   },
   description:
-    "GamblerLive helps players discover, compare and understand online casinos through expert reviews, rankings, bonuses and independent research.",
+    "Compare licensed online casinos with GamblerLive: independent reviews, welcome bonuses, payment methods, withdrawal limits and player guides. 18+ only.",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
   openGraph: {
     siteName: "GamblerLive",
     type: "website",
@@ -46,6 +54,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
       <body className="font-sans antialiased">
+        <JsonLd data={[organizationSchema, websiteSchema]} />
         <Header />
         <main>{children}</main>
         <Footer />

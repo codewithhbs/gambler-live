@@ -1,5 +1,8 @@
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import JsonLd from "@/components/JsonLd";
+import { pageMeta } from "@/lib/site";
+import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { news, getNewsBySlug } from "@/data/news";
 
 export function generateStaticParams() {
@@ -9,7 +12,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }) {
   const item = getNewsBySlug(params.slug);
   if (!item) return {};
-  return { title: item.title, description: item.excerpt };
+  return pageMeta({ title: item.title, description: item.excerpt, path: `/news/${item.slug}`, openGraph: { type: "article", url: `/news/${item.slug}`, title: item.title, description: item.excerpt, publishedTime: item.publishedAt } });
 }
 
 export default function NewsArticlePage({ params }) {
@@ -24,6 +27,12 @@ export default function NewsArticlePage({ params }) {
 
   return (
     <>
+      <JsonLd
+        data={[
+          articleSchema({ type: "NewsArticle", title: item.title, description: item.excerpt, path: `/news/${item.slug}`, author: item.author, datePublished: item.publishedAt }),
+          breadcrumbSchema([{ name: "News", path: "/news" }, { name: item.title, path: `/news/${item.slug}` }]),
+        ]}
+      />
       <Breadcrumbs items={[{ label: "News", href: "/news" }, { label: item.title }]} />
       <article className="bg-ink">
         <div className="container-content max-w-prose py-14 md:py-20">

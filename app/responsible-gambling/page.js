@@ -1,8 +1,10 @@
-export const metadata = {
-  title: "Responsible Gambling",
+import { pageMeta } from "@/lib/site";
+export const metadata = pageMeta({
+  title: "Responsible Gambling: Limits & Support",
   description:
-    "Gambling should be entertainment, not a source of income. Guidance on limits, warning signs and where to get help.",
-};
+    "Gambling should be entertainment, not a source of income. Guidance on setting limits, spotting warning signs, self-exclusion and where to get help.",
+  path: "/responsible-gambling",
+});
 
 export default function ResponsibleGamblingPage() {
   return (

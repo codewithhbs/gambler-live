@@ -1,6 +1,12 @@
+import { pageMeta } from "@/lib/site";
 import LegalPageContent from "@/components/LegalPageContent";
 
-export const metadata = { title: "Terms of Use" };
+export const metadata = pageMeta({
+  title: "Terms of Use",
+  description:
+    "Terms of use for GamblerLive.com covering use of our casino reviews and content, affiliate links, limitation of liability and the 18+ age requirement.",
+  path: "/terms",
+});
 
 const sections = [
   {

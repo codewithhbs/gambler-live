@@ -1,6 +1,12 @@
+import { pageMeta } from "@/lib/site";
 import LegalPageContent from "@/components/LegalPageContent";
 
-export const metadata = { title: "Privacy Policy" };
+export const metadata = pageMeta({
+  title: "Privacy Policy",
+  description:
+    "Read the GamblerLive privacy policy: what data we collect through the website and contact form, how we use and protect it, cookies and your rights.",
+  path: "/privacy-policy",
+});
 
 const sections = [
   {

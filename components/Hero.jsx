@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { casinos } from "@/data/casinos";
+import CasinoLogo from "@/components/CasinoLogo";
 
 export default function Hero() {
   const top = casinos[0];
@@ -139,17 +140,6 @@ export default function Hero() {
               backdrop-blur-sm
             "
           >
-            <div className="relative h-40 w-full">
-              <Image
-                src={top.image}
-                alt={top.name}
-                fill
-                sizes="(min-width: 768px) 50vw, 100vw"
-                priority
-                className="object-cover"
-              />
-            </div>
-
             <div className="p-6 md:p-8">
               <div className="flex items-center justify-between border-b border-ink-line pb-4">
                 <span className="text-xs text-clay">
@@ -172,15 +162,7 @@ export default function Hero() {
                   </h3>
                 </div>
 
-                <div className="text-right">
-                  <span className="font-display text-3xl text-moss-500 tabular-num">
-                    {top.rating}
-                  </span>
-
-                  <span className="text-sm text-clay">
-                    /10
-                  </span>
-                </div>
+                <CasinoLogo casino={top} size={56} />
               </div>
 
               <div className="mt-6 rounded border border-ink-line bg-ink p-4">
@@ -189,38 +171,23 @@ export default function Hero() {
                 </p>
 
                 <p className="mt-1 text-[15px] font-medium text-paper">
-                  {top.bonus}
+                  {top.bonusHeadline}
                 </p>
               </div>
 
               <div className="mt-6 grid grid-cols-2 gap-3 text-sm text-clay">
-                <div>
-                  License:{" "}
-                  <span className="text-bone">
-                    {top.license}
-                  </span>
-                </div>
-
-                <div>
-                  Games:{" "}
-                  <span className="text-bone">
-                    {top.games}
-                  </span>
-                </div>
-
-                <div>
-                  Payout:{" "}
-                  <span className="text-bone">
-                    {top.payoutSpeed}
-                  </span>
-                </div>
-
-                <div>
-                  Founded:{" "}
-                  <span className="text-bone">
-                    {top.founded}
-                  </span>
-                </div>
+                {[
+                  ["License", top.licenseShort],
+                  ["Established", top.established],
+                  ["Operator", top.operator],
+                  ["Games", top.gameTypes?.slice(0, 2).join(", ")],
+                ]
+                  .filter(([, v]) => v)
+                  .map(([label, v]) => (
+                    <div key={label}>
+                      {label}: <span className="text-bone">{v}</span>
+                    </div>
+                  ))}
               </div>
 
               <Link

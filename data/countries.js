@@ -5,7 +5,7 @@ export const countries = [
     regulator: "UK Gambling Commission (UKGC)",
     currency: "GBP",
     intro:
-      "UK players benefit from some of the strictest casino regulation in the world. Every operator on this page holds a valid UKGC license and follows mandatory affordability and self-exclusion rules.",
+      "UK players benefit from some of the strictest casino regulation in the world. The casinos listed here state that they accept UK players — check each review's license details, because offshore-licensed operators are not covered by UKGC protections such as GamStop.",
     popularGames: ["Slots", "Roulette", "Live Casino"],
   },
   {

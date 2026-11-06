@@ -1,6 +1,12 @@
+import { pageMeta } from "@/lib/site";
 import LegalPageContent from "@/components/LegalPageContent";
 
-export const metadata = { title: "Disclaimer & Affiliate Disclosure" };
+export const metadata = pageMeta({
+  title: "Disclaimer & Affiliate Disclosure",
+  description:
+    "How GamblerLive earns affiliate commission, why it never changes our casino reviews, and why you should always verify offers before you deposit.",
+  path: "/disclaimer",
+});
 
 const sections = [
   {

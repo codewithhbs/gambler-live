@@ -14,20 +14,6 @@ export const news = [
     ],
   },
   {
-    slug: "aurum-play-adds-live-game-shows",
-    category: "Casino News",
-    title: "Aurum Play Expands Live Casino With Four New Game Shows",
-    excerpt:
-      "The addition brings Aurum Play's live-dealer catalog to over 90 tables, up from 60 at the start of the year.",
-    publishedAt: "2026-08-27",
-    author: "GamblerLive Newsroom",
-    content: [
-      "Aurum Play has added four new live game-show titles to its live casino lobby, expanding its total live-dealer table count to more than 90.",
-      "The expansion focuses on wheel-based and bonus-round formats that have grown in popularity over the past two years, streamed from a dedicated studio partner rather than a shared provider floor.",
-      "We'll be re-testing Aurum Play's live casino category in our next scheduled review cycle to confirm whether the expanded catalog affects its current games score.",
-    ],
-  },
-  {
     slug: "provider-spotlight-new-slot-engine",
     category: "Game Releases",
     title: "A New Slot Engine Is Changing How Volatility Is Marketed",

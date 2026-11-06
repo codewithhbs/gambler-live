@@ -1,13 +1,15 @@
+import { pageMeta } from "@/lib/site";
 import Link from "next/link";
 import SectionHeader from "@/components/SectionHeader";
 import GameCard from "@/components/GameCard";
 import { gameCategories, games } from "@/data/games";
 
-export const metadata = {
-  title: "Casino Games — Slots, Blackjack, Roulette & More",
+export const metadata = pageMeta({
+  title: "Casino Games: Slots, Blackjack & Roulette",
   description:
     "Browse casino games by category with RTP, volatility and max win data for every title we've reviewed.",
-};
+  path: "/games",
+});
 
 export default function GamesPage() {
   return (

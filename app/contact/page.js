@@ -1,7 +1,11 @@
-export const metadata = {
-  title: "Contact GamblerLive",
-  description: "Editorial, partnership and business inquiries.",
-};
+import { pageMeta } from "@/lib/site";
+import ContactForm from "@/components/ContactForm";
+export const metadata = pageMeta({
+  title: "Contact Us",
+  description:
+    "Contact the GamblerLive team for editorial, partnership or business inquiries. Send a message through our contact form and we will reply by email.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (
@@ -31,55 +35,7 @@ export default function ContactPage() {
           </dl>
         </div>
 
-        <form className="rounded-lg border border-ink-line bg-ink-soft p-6 md:p-8">
-          <div className="space-y-5">
-            <div>
-              <label htmlFor="name" className="mb-1.5 block text-sm text-bone">Name</label>
-              <input
-                id="name"
-                type="text"
-                className="w-full rounded border border-ink-line bg-ink px-4 py-2.5 text-sm text-paper placeholder:text-clay focus:border-moss-500"
-                placeholder="Your name"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="mb-1.5 block text-sm text-bone">Email</label>
-              <input
-                id="email"
-                type="email"
-                className="w-full rounded border border-ink-line bg-ink px-4 py-2.5 text-sm text-paper placeholder:text-clay focus:border-moss-500"
-                placeholder="you@email.com"
-              />
-            </div>
-            <div>
-              <label htmlFor="topic" className="mb-1.5 block text-sm text-bone">Topic</label>
-              <select
-                id="topic"
-                className="w-full rounded border border-ink-line bg-ink px-4 py-2.5 text-sm text-paper focus:border-moss-500"
-              >
-                <option>Editorial</option>
-                <option>Partnership</option>
-                <option>Business</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div>
-              <label htmlFor="message" className="mb-1.5 block text-sm text-bone">Message</label>
-              <textarea
-                id="message"
-                rows={5}
-                className="w-full rounded border border-ink-line bg-ink px-4 py-2.5 text-sm text-paper placeholder:text-clay focus:border-moss-500"
-                placeholder="How can we help?"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full rounded bg-moss-500 py-3 text-sm font-semibold text-ink hover:bg-moss-400"
-            >
-              Send message
-            </button>
-          </div>
-        </form>
+        <ContactForm />
       </div>
     </section>
   );

@@ -1,6 +1,12 @@
+import { pageMeta } from "@/lib/site";
 import LegalPageContent from "@/components/LegalPageContent";
 
-export const metadata = { title: "Cookie Policy" };
+export const metadata = pageMeta({
+  title: "Cookie Policy",
+  description:
+    "How GamblerLive uses cookies and similar technologies, what each type of cookie does, and how you can manage or disable cookies in your browser.",
+  path: "/cookie-policy",
+});
 
 const sections = [
   {

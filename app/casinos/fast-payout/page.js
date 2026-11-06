@@ -1,12 +1,15 @@
+import { pageMeta } from "@/lib/site";
 import CasinoRankingCard from "@/components/CasinoRankingCard";
 import SectionHeader from "@/components/SectionHeader";
 import ResponsibleGamblingNotice from "@/components/ResponsibleGamblingNotice";
 import { getCasinosByTag } from "@/data/casinos";
 
-export const metadata = {
-  title: "Fastest Payout Casinos",
-  description: "Casinos ranked by verified real-world withdrawal times, not marketing claims.",
-};
+export const metadata = pageMeta({
+  title: "Fast Payout Casinos: Quick Withdrawals",
+  description:
+    "Online casinos that advertise fast or instant withdrawals, with their published withdrawal limits, payment methods and licensing details.",
+  path: "/casinos/fast-payout",
+});
 
 export default function FastPayoutCasinosPage() {
   const list = getCasinosByTag("fast-payout");
@@ -17,7 +20,7 @@ export default function FastPayoutCasinosPage() {
           <SectionHeader
             kicker="Casinos"
             title="Fastest payout casinos"
-            description="Payout speed shown here comes from a real withdrawal test during our review process, not the operator's stated terms."
+            description="Casinos that advertise fast or instant withdrawals. Check each review for published withdrawal limits — speed also depends on verification and payment method."
           />
         </div>
       </section>

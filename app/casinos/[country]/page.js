@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/site";
 import { notFound } from "next/navigation";
 import CasinoRankingCard from "@/components/CasinoRankingCard";
 import SectionHeader from "@/components/SectionHeader";
@@ -12,10 +13,11 @@ export function generateStaticParams() {
 export function generateMetadata({ params }) {
   const country = getCountry(params.country);
   if (!country) return {};
-  return {
-    title: `Best Online Casinos for Players in ${country.name}`,
-    description: country.intro,
-  };
+  return pageMeta({
+    title: `Best Online Casinos in ${country.name}`,
+    description: `Online casinos that accept players from ${country.name}, with license details, payment methods, limits and welcome bonuses. 18+ only, gamble responsibly.`,
+    path: `/casinos/${country.code}`,
+  });
 }
 
 export default function CountryCasinosPage({ params }) {

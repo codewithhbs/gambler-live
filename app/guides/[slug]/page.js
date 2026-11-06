@@ -2,6 +2,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
+import JsonLd from "@/components/JsonLd";
+import { pageMeta } from "@/lib/site";
+import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { guides, getGuideBySlug } from "@/data/guides";
 
 export function generateStaticParams() {
@@ -11,10 +14,12 @@ export function generateStaticParams() {
 export function generateMetadata({ params }) {
   const guide = getGuideBySlug(params.slug);
   if (!guide) return {};
-  return {
+  return pageMeta({
     title: guide.title,
     description: guide.excerpt,
-  };
+    path: `/guides/${guide.slug}`,
+    openGraph: { type: "article", url: `/guides/${guide.slug}`, title: guide.title, description: guide.excerpt, publishedTime: guide.publishedAt, modifiedTime: guide.updatedAt },
+  });
 }
 
 export default function GuidePage({ params }) {
@@ -25,6 +30,13 @@ export default function GuidePage({ params }) {
 
   return (
     <>
+      <JsonLd
+        data={[
+          articleSchema({ title: guide.title, description: guide.excerpt, path: `/guides/${guide.slug}`, author: guide.author, datePublished: guide.publishedAt, dateModified: guide.updatedAt }),
+          breadcrumbSchema([{ name: "Guides", path: "/guides" }, { name: guide.title, path: `/guides/${guide.slug}` }]),
+          ...(guide.faq?.length ? [faqSchema(guide.faq)] : []),
+        ]}
+      />
       <Breadcrumbs items={[{ label: "Guides", href: "/guides" }, { label: guide.title }]} />
 
       <section className="bg-ink">

@@ -1,15 +1,17 @@
+import { pageMeta } from "@/lib/site";
 import BonusCard from "@/components/BonusCard";
 import SectionHeader from "@/components/SectionHeader";
 import ResponsibleGamblingNotice from "@/components/ResponsibleGamblingNotice";
 import { bonuses } from "@/data/bonuses";
 
-export const metadata = {
-  title: "Casino Bonuses — Welcome Offers, Free Spins & Cashback",
+export const metadata = pageMeta({
+  title: "Casino Bonuses: Welcome Offers & Free Spins",
   description:
-    "Compare current casino bonuses with wagering requirements, minimum deposits and full terms shown up front.",
-};
+    "Compare online casino welcome bonuses, deposit match offers and free spins side by side, with wagering and minimum deposit terms shown up front.",
+  path: "/bonuses",
+});
 
-const CATEGORIES = ["All", "Welcome Bonus", "No Deposit Bonus", "Crypto Bonus", "Cashback"];
+const CATEGORIES = ["All", "Welcome Bonus", "Welcome Package", "High Roller Bonus"];
 
 export default function BonusesPage() {
   return (
@@ -19,7 +21,7 @@ export default function BonusesPage() {
           <SectionHeader
             kicker="Bonuses"
             title="Casino bonuses, compared"
-            description="Every bonus below lists its real wagering requirement and expiry — the details that determine whether an offer is actually worth claiming."
+            description="Welcome offers from the casinos we list, with the terms the operator publishes. Always confirm the full T&Cs on the casino site before you deposit."
           />
           <div className="flex flex-wrap gap-2">
             {CATEGORIES.map((cat) => (
