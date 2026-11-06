@@ -1,8 +1,10 @@
-export const metadata = {
-  title: "About GamblerLive",
+import { pageMeta } from "@/lib/site";
+export const metadata = pageMeta({
+  title: "About Us: Independent Casino Reviews",
   description:
-    "Who we are, how we review casinos, and how GamblerLive makes money.",
-};
+    "Who we are, how GamblerLive reviews online casinos, and how we make money through affiliate partnerships without letting it affect our content.",
+  path: "/about",
+});
 
 const SECTIONS = [
   {

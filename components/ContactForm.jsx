@@ -1,15 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const INPUT =
   "w-full rounded border bg-ink px-4 py-2.5 text-sm text-paper placeholder:text-clay focus:border-moss-500 focus:outline-none";
 
 export default function ContactForm() {
+  const router = useRouter();
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
   const [error, setError] = useState("");
   const [fieldErrors, setFieldErrors] = useState({});
-  const [sentTo, setSentTo] = useState("");
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -33,9 +34,12 @@ export default function ContactForm() {
         setStatus("error");
         return;
       }
-      setSentTo(data.email);
+      try {
+        sessionStorage.setItem("gl_contact_email", data.email);
+      } catch {}
       form.reset();
       setStatus("success");
+      router.push("/contact/thank-you");
     } catch {
       setError("Network error. Please check your connection and try again.");
       setStatus("error");
@@ -44,28 +48,9 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div
-        role="status"
-        aria-live="polite"
-        className="flex flex-col items-center justify-center rounded-lg border border-moss-500/40 bg-ink-soft p-8 text-center md:p-10"
-      >
-        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-moss-500/15 text-moss-500">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <path d="M20 6 9 17l-5-5" />
-          </svg>
-        </div>
-        <h2 className="mt-5 font-display text-2xl text-paper">Message sent successfully</h2>
-        <p className="mt-3 max-w-sm text-sm leading-relaxed text-clay">
-          Thanks for reaching out. We&apos;ve received your message and sent a confirmation to{" "}
-          <span className="text-bone">{sentTo}</span>. Our team usually replies within 2 business days.
-        </p>
-        <button
-          type="button"
-          onClick={() => setStatus("idle")}
-          className="mt-7 rounded border border-ink-line px-5 py-2.5 text-sm font-medium text-paper hover:border-bone"
-        >
-          Send another message
-        </button>
+      <div role="status" className="flex items-center justify-center gap-3 rounded-lg border border-moss-500/40 bg-ink-soft p-10 text-sm text-bone">
+        <span className="h-4 w-4 animate-spin rounded-full border-2 border-moss-500/30 border-t-moss-500" aria-hidden="true" />
+        Message sent — redirecting…
       </div>
     );
   }

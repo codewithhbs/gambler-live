@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { pageMeta } from "@/lib/site";
 import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import GameArt from "@/components/GameArt";
@@ -12,10 +13,11 @@ export function generateStaticParams() {
 export function generateMetadata({ params }) {
   const game = getGameBySlug(params.slug);
   if (!game) return {};
-  return {
+  return pageMeta({
     title: `${game.title} Review — RTP, Volatility & Max Win`,
     description: game.overview,
-  };
+    path: `/games/${game.slug}`,
+  });
 }
 
 export default function GameReviewPage({ params }) {

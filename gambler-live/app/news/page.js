@@ -1,11 +1,14 @@
+import { pageMeta } from "@/lib/site";
 import NewsCard from "@/components/NewsCard";
 import SectionHeader from "@/components/SectionHeader";
 import { news } from "@/data/news";
 
-export const metadata = {
-  title: "Casino Industry News",
-  description: "Regulation, operator, and game-release news from the online casino industry.",
-};
+export const metadata = pageMeta({
+  title: "Online Casino Industry News",
+  description:
+    "Regulation, operator and game-release news from the online casino industry, with what each development means for players.",
+  path: "/news",
+});
 
 export default function NewsPage() {
   return (

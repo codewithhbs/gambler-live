@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+import { getTransporter, explainSmtpError, resetTransporter } from "@/lib/mailer";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -20,21 +20,6 @@ function rateLimited(ip) {
 
 const esc = (s) =>
   String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-
-let transporter;
-function getTransporter() {
-  if (transporter) return transporter;
-  const { SMTP_HOST, SMTP_PORT, SMTP_SECURE, SMTP_USER, SMTP_PASS } = process.env;
-  if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) throw new Error("SMTP is not configured");
-  const port = Number(SMTP_PORT || 465);
-  transporter = nodemailer.createTransport({
-    host: SMTP_HOST,
-    port,
-    secure: SMTP_SECURE ? SMTP_SECURE === "true" : port === 465,
-    auth: { user: SMTP_USER, pass: SMTP_PASS },
-  });
-  return transporter;
-}
 
 function shell(title, body) {
   return `<!doctype html><html><body style="margin:0;background:#EEF3FB;font-family:Arial,Helvetica,sans-serif;color:#0A1230">
@@ -82,7 +67,7 @@ export async function POST(req) {
   const to = process.env.CONTACT_TO || "contact@gamblerlive.com";
 
   try {
-    const t = getTransporter();
+    const t = await getTransporter();
 
     // 1) Notification to the GamblerLive inbox
     await t.sendMail({
@@ -122,9 +107,18 @@ export async function POST(req) {
 
     return Response.json({ ok: true });
   } catch (e) {
-    console.error("[contact] send failed:", e.message);
+    resetTransporter();
+    const hint = explainSmtpError(e);
+    console.error("[contact] send failed:", e.code || "", e.responseCode || "", e.message, "| hint:", hint);
+    const debug = process.env.SMTP_DEBUG === "true";
     return Response.json(
-      { ok: false, error: "We couldn't send your message right now. Please email contact@gamblerlive.com directly." },
+      {
+        ok: false,
+        error: debug
+          ? `SMTP error: ${hint}`
+          : "We couldn't send your message right now. Please email contact@gamblerlive.com directly.",
+        ...(debug ? { code: e.code || null, detail: e.message } : {}),
+      },
       { status: 500 }
     );
   }

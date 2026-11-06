@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/site";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
@@ -13,6 +14,14 @@ import { casinos } from "@/data/casinos";
 import { bonuses } from "@/data/bonuses";
 import { guides } from "@/data/guides";
 import { news } from "@/data/news";
+
+export const metadata = pageMeta({
+  title: "Online Casino Reviews & Rankings | GamblerLive",
+  description:
+    "Compare licensed online casinos with GamblerLive: independent reviews, welcome bonuses, payment methods, withdrawal limits and player guides. 18+ only.",
+  path: "/",
+  absoluteTitle: true,
+});
 
 export default function HomePage() {
   return (

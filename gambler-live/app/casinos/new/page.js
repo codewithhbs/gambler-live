@@ -1,12 +1,15 @@
+import { pageMeta } from "@/lib/site";
 import CasinoRankingCard from "@/components/CasinoRankingCard";
 import SectionHeader from "@/components/SectionHeader";
 import ResponsibleGamblingNotice from "@/components/ResponsibleGamblingNotice";
 import { getCasinosByTag } from "@/data/casinos";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "New Online Casinos",
-  description: "Recently launched casinos that have passed our initial review process.",
-};
+  description:
+    "Recently launched online casinos (established 2025 and later) with their license, game types, payment methods, limits and welcome offers.",
+  path: "/casinos/new",
+});
 
 export default function NewCasinosPage() {
   const list = getCasinosByTag("new");
