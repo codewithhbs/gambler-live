@@ -17,7 +17,7 @@ export default function CasinoLogo({ casino, size = 56, className = "", priority
           fill
           sizes={`${size}px`}
           priority={priority}
-          className="object-cover"
+          className="object-contain"
         />
       </div>
     );
