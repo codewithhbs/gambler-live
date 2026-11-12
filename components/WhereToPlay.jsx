@@ -1,5 +1,6 @@
 import { AFFILIATE_REL } from "@/lib/affiliate";
 import CasinoLogo from "./CasinoLogo";
+import BrandLink from "./BrandLink";
 import { casinos } from "@/data/casinos";
 
 export default function WhereToPlay({ title }) {
@@ -19,9 +20,13 @@ export default function WhereToPlay({ title }) {
             className="flex flex-col gap-4 rounded border border-ink-line bg-ink p-4 sm:flex-row sm:items-center sm:justify-between"
           >
             <div className="flex items-center gap-4">
-              <CasinoLogo casino={c} size={48} />
+              <BrandLink casino={c} label={`Visit ${c.name}`} className="shrink-0 transition-opacity hover:opacity-80">
+                <CasinoLogo casino={c} size={48} />
+              </BrandLink>
               <div>
-                <p className="text-sm font-medium text-paper">{c.name}</p>
+                <p className="text-sm font-medium text-paper">
+                  <BrandLink casino={c} className="hover:underline">{c.name}</BrandLink>
+                </p>
                 <p className="text-xs text-clay">{c.bonusHeadline || c.tagline}</p>
               </div>
             </div>

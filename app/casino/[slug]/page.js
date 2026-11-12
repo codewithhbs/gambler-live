@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { casinos, getCasinoBySlug } from "@/data/casinos";
 import ScoreBar from "@/components/ScoreBar";
 import CasinoLogo from "@/components/CasinoLogo";
+import BrandLink from "@/components/BrandLink";
 import JsonLd from "@/components/JsonLd";
 import ResponsibleGamblingNotice from "@/components/ResponsibleGamblingNotice";
 import { pageMeta } from "@/lib/site";
@@ -126,10 +127,14 @@ export default function CasinoReviewPage({ params }) {
         <div className="container-content grid gap-10 py-14 md:grid-cols-[1fr_320px] md:py-20">
           <div>
             <div className="flex items-center gap-4">
-              <CasinoLogo casino={casino} size={56} priority />
+              <BrandLink casino={casino} label={`Visit ${casino.name}`} className="shrink-0 transition-opacity hover:opacity-80">
+                <CasinoLogo casino={casino} size={56} priority />
+              </BrandLink>
               <p className="text-xs text-moss-500">{casino.tagline}</p>
             </div>
-            <h1 className="mt-4 font-display text-display-lg text-paper">{casino.name} Review</h1>
+            <h1 className="mt-4 font-display text-display-lg text-paper">
+              <BrandLink casino={casino} className="hover:underline">{casino.name}</BrandLink> Review
+            </h1>
             <p className="mt-5 max-w-2xl text-[16px] leading-relaxed text-clay">{casino.summary}</p>
 
             {casino.scores ? (
@@ -209,7 +214,13 @@ export default function CasinoReviewPage({ params }) {
                 <div key={key} id={`field-${key}`} className="grid gap-2 py-4 text-sm sm:grid-cols-[200px_1fr] sm:gap-6">
                   <dt className="font-medium text-bone">{label}</dt>
                   <dd className="leading-relaxed text-clay">
-                    <FieldValue value={value} />
+                    {key === "website" && casino.visitUrl ? (
+                      <BrandLink casino={casino} className="break-all text-moss-500 hover:underline">
+                        {hostOf(value)}
+                      </BrandLink>
+                    ) : (
+                      <FieldValue value={value} />
+                    )}
                   </dd>
                 </div>
               ))}
@@ -253,18 +264,24 @@ export default function CasinoReviewPage({ params }) {
           <h2 className="font-display text-2xl text-paper">Related casinos</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             {related.map((c) => (
-              <Link
+              <div
                 key={c.slug}
-                href={`/casino/${c.slug}`}
                 className="flex items-center gap-4 rounded-lg border border-ink-line bg-ink-soft p-5 hover:border-bone"
               >
-                <CasinoLogo casino={c} size={56} />
+                <BrandLink casino={c} label={`Visit ${c.name}`} className="shrink-0 transition-opacity hover:opacity-80">
+                  <CasinoLogo casino={c} size={56} />
+                </BrandLink>
                 <div>
                   <p className="text-xs text-moss-500">{c.tagline}</p>
-                  <h3 className="mt-1 font-display text-lg text-paper">{c.name}</h3>
+                  <h3 className="mt-1 font-display text-lg text-paper">
+                    <BrandLink casino={c} className="hover:underline">{c.name}</BrandLink>
+                  </h3>
                   {c.licenseShort && <p className="mt-1 text-sm text-clay">{c.licenseShort}</p>}
+                  <Link href={`/casino/${c.slug}`} className="mt-1 inline-block text-xs text-moss-500 hover:underline">
+                    Read review →
+                  </Link>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>

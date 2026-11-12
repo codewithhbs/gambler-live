@@ -2,6 +2,7 @@ import { AFFILIATE_REL } from "@/lib/affiliate";
 import Link from "next/link";
 import ScoreBar from "./ScoreBar";
 import CasinoLogo from "./CasinoLogo";
+import BrandLink from "./BrandLink";
 
 export default function CasinoRankingCard({ casino, featured }) {
   return (
@@ -17,13 +18,15 @@ export default function CasinoRankingCard({ casino, featured }) {
           <span className="font-display text-3xl text-clay tabular-num">
             {String(casino.position).padStart(2, "0")}
           </span>
-          <CasinoLogo casino={casino} size={64} />
+          <BrandLink casino={casino} label={`Visit ${casino.name}`} className="shrink-0 self-start transition-opacity hover:opacity-80">
+            <CasinoLogo casino={casino} size={64} />
+          </BrandLink>
           <div>
             <p className="text-xs text-moss-500">{casino.tagline}</p>
             <h3 className="mt-1 font-display text-xl text-paper md:text-2xl">
-              <Link href={`/casino/${casino.slug}`} className="hover:underline">
+              <BrandLink casino={casino} className="hover:underline">
                 {casino.name}
-              </Link>
+              </BrandLink>
             </h3>
             <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-clay">
               {casino.licenseShort && <span>License: {casino.licenseShort}</span>}

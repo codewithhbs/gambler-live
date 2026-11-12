@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { AFFILIATE_REL } from "@/lib/affiliate";
 import { getCasinoBySlug } from "@/data/casinos";
+import BrandLink from "./BrandLink";
 
 export default function BonusCard({ bonus }) {
   const casino = getCasinoBySlug(bonus.casinoSlug);
@@ -15,7 +15,7 @@ export default function BonusCard({ bonus }) {
       <p className="text-xs text-moss-500">{bonus.category}</p>
       <h3 className="mt-1.5 font-display text-lg text-paper">
         {casino ? (
-          <Link href={`/casino/${casino.slug}`} className="hover:underline">{bonus.casino}</Link>
+          <BrandLink casino={casino} className="hover:underline">{bonus.casino}</BrandLink>
         ) : (
           bonus.casino
         )}

@@ -1,5 +1,3 @@
-import { AFFILIATE_URL } from "@/lib/affiliate";
-
 // Source: "Online Casino Listings: Website Content Sheet".
 // Field order per casino follows the sheet:
 // website, operator, established, license, gameTypes, providers, currencies,
@@ -18,8 +16,8 @@ const raw = [
   {
     slug: "2up",
     name: "2UP",
+    visitUrl: "https://go.2up.one/visit/?bta=35327&brand=2upaffiliates",
     tagline: "No-KYC crypto casino",
-    visitUrl: AFFILIATE_URL,
     website: "https://2up.io",
     operator: "Uponly NV",
     established: 2024,
@@ -44,6 +42,7 @@ const raw = [
   {
     slug: "zizobet",
     name: "Zizobet",
+    visitUrl: "https://track.zizobetpartners.com/visit/?bta=43820&nci=6175",
     tagline: "Hybrid fiat & crypto cashier",
     website: "https://zizobet.com/en",
     established: 2025,
@@ -67,6 +66,7 @@ const raw = [
   {
     slug: "winari",
     name: "Winari",
+    visitUrl: "https://go.winari.com/c/4a63f2bd",
     tagline: "Casino + prediction markets",
     website: "https://winari.com",
     established: 2026,
@@ -101,6 +101,7 @@ const raw = [
   {
     slug: "voodoo-casino",
     name: "Voodoo Casino",
+    visitUrl: "https://voodoo-redirector.com/aui02jzpt?visit_id={click_id}&webID={affiliate_id}",
     tagline: "Slots-focused casino",
     website: "https://www.voodoo.casino",
     established: 2023,
@@ -119,6 +120,7 @@ const raw = [
   {
     slug: "slotsgem",
     name: "Slotsgem",
+    visitUrl: "https://mio.novarao.com/redirect.aspx?lpid=601&bid=1487&pid=114594&subid={REPLACE_CLICKID}",
     tagline: "45+ currencies accepted",
     website: "https://slotsgem.net",
     established: 2025,
@@ -138,6 +140,7 @@ const raw = [
   {
     slug: "lucky-star",
     name: "Lucky Star",
+    visitUrl: "https://luckymdmq.life/?p=1c9h&open=register&sub2=SITE_NAME",
     tagline: "24/7 multilingual support",
     operator: "WUNGroup B.V.",
     established: 2024,
@@ -159,6 +162,7 @@ const raw = [
   {
     slug: "milkyway",
     name: "MilkyWay",
+    visitUrl: "https://mlk-red.com/registration?lang=en&ref=decf0b3a-53d4-4e71-b44f-22d0527cc8d6&campaign=672fecab8b53fd87ab11a",
     tagline: "50+ game providers",
     website: "https://milkyway.casino",
     established: 2023,
@@ -173,11 +177,12 @@ const raw = [
     responsibleGambling: "https://milkyway.casino/responsible-gaming",
     tags: ["crypto"],
     countries: ["canada", "australia"],
-    image: "/img/milky.jpeg",
+    image: "/img/milkyway.jpeg",
   },
   {
     slug: "winrolla",
     name: "Winrolla",
+    visitUrl: "https://wnrl.myloric.com/?mid=393575_2264228",
     tagline: "300% up to EUR 8,000",
     website: "https://winrolla.com",
     established: 2025,
@@ -200,6 +205,7 @@ const raw = [
   {
     slug: "sirbetalot",
     name: "SirBetalot",
+    visitUrl: "https://record.merlinaffiliates.io/_TusvNThj_BH6PBA04iUMN2Nd7ZgqdRLk/1/",
     tagline: "Up to 40% cashback",
     website: "https://sirbetalot.com",
     established: 2026,
@@ -227,6 +233,7 @@ const raw = [
   {
     slug: "spindragons",
     name: "Spindragons",
+    visitUrl: "https://record.go2affiliates.com/_92Il54QTmO8dHrf4TDP9mWNd7ZgqdRLk/1/",
     tagline: "VIP programme & fast payouts",
     website: "https://spindragons.com",
     operator: "Round Square Limited",
@@ -246,11 +253,12 @@ const raw = [
     responsibleGambling: "Self-exclusion and account closure",
     tags: ["new", "crypto", "fast-payout"],
     countries: [],
-    image: "/img/spindragon.jpeg",
+    image: "/img/spindragons.jpeg",
   },
   {
     slug: "bangawin",
     name: "Bangawin",
+    visitUrl: "https://record.go2affiliates.com/_92Il54QTmO-mIplh4Hfp_2Nd7ZgqdRLk/1/",
     tagline: "Localized site versions",
     website: "https://bangawin.com",
     operator: "Round Square Limited",
@@ -275,6 +283,7 @@ const raw = [
   {
     slug: "dicepalace",
     name: "DicePalace",
+    visitUrl: "https://dcpc.myloric.com/?mid=393433_2263629",
     tagline: "Tournaments & exclusive bonuses",
     website: "https://dicepalace.com",
     operator: "MBM Consulting Limited",
@@ -301,8 +310,8 @@ const raw = [
   {
     slug: "spinbetter",
     name: "SpinBetter",
-    tagline: "Average 10-minute payouts",
     visitUrl: "https://redirspinner.com/3fVM?p=%2Fregistration%2F",
+    tagline: "Average 10-minute payouts",
     website: "https://spinbetter.games",
     operator: "Sprut Group Limitada (3-102-955890 Limitada)",
     established: 2019,
@@ -323,11 +332,12 @@ const raw = [
       "18+ only. Self-exclusion on request via block@spinbetter.com. Complaints via claims@spinbetter.com.",
     tags: ["crypto", "fast-payout", "mobile"],
     countries: [],
-    image: "/img/spinbe.jpeg",
+    image: "/img/SpinBetter.jpeg",
   },
   {
     slug: "neospin",
     name: "NeoSpin",
+    visitUrl: "https://neospinlink.com/h3nunwqol",
     tagline: "Four-deposit welcome package",
     website: "https://neospin.com",
     established: 2022,
@@ -359,6 +369,7 @@ const raw = [
   {
     slug: "coldbet",
     name: "Coldbet",
+    visitUrl: "https://coldb2.com/zGtGRKZc",
     tagline: "Casino + large sportsbook",
     website: "https://coldbet.com",
     established: 2025,
@@ -397,6 +408,7 @@ const raw = [
   {
     slug: "hugo-casino",
     name: "Hugo Casino",
+    visitUrl: "https://hugoredirect.com/dzsptaggk",
     tagline: "24/7 live chat support",
     website: "https://hugocasino.com",
     established: 2023,
@@ -421,6 +433,7 @@ const raw = [
   {
     slug: "cosmobet",
     name: "Cosmobet",
+    visitUrl: "https://track.cosmobetpartners.com/visit/?bta=43668&nci=6102",
     tagline: "Up to 400% + 1,000 free spins",
     website: "https://cosmobet.com/en",
     established: 2024,

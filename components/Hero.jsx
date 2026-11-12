@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { casinos } from "@/data/casinos";
 import CasinoLogo from "@/components/CasinoLogo";
+import BrandLink from "@/components/BrandLink";
 
 export default function Hero() {
   const top = casinos[0];
@@ -158,11 +159,15 @@ export default function Hero() {
                   </p>
 
                   <h3 className="mt-1 font-display text-2xl text-paper">
-                    {top.name}
+                    <BrandLink casino={top} className="hover:underline">
+                      {top.name}
+                    </BrandLink>
                   </h3>
                 </div>
 
-                <CasinoLogo casino={top} size={56} />
+                <BrandLink casino={top} label={`Visit ${top.name}`} className="shrink-0 transition-opacity hover:opacity-80">
+                  <CasinoLogo casino={top} size={56} />
+                </BrandLink>
               </div>
 
               <div className="mt-6 rounded border border-ink-line bg-ink p-4">
