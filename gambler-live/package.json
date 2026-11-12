@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev -p 3030",
     "build": "next build",
-    "start": "next start -p 3030"
+    "start": "next start -p 3030",
+    "test:smtp": "node scripts/test-smtp.mjs"
   },
   "dependencies": {
     "next": "14.2.32",

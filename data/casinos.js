@@ -114,7 +114,7 @@ const raw = [
     availableIn: "Australia, Germany, Austria, Canada, New Zealand, Switzerland, Norway, Ireland, Denmark, Italy",
     tags: ["crypto"],
     countries: ["australia", "canada"],
-    image: "/img/voodoo.jfif",
+    image: "/img/voodoo.png",
   },
   {
     slug: "slotsgem",
@@ -140,7 +140,7 @@ const raw = [
     name: "Lucky Star",
     tagline: "24/7 multilingual support",
     operator: "WUNGroup B.V.",
-    established: 2023,
+    established: 2024,
     license: "Curacao, License No. 160576",
     gameTypes: ["Slots", "Live Games", "Sports Betting", "Crash Games"],
     providers:
@@ -302,6 +302,7 @@ const raw = [
     slug: "spinbetter",
     name: "SpinBetter",
     tagline: "Average 10-minute payouts",
+    visitUrl: "https://redirspinner.com/3fVM?p=%2Fregistration%2F",
     website: "https://spinbetter.games",
     operator: "Sprut Group Limitada (3-102-955890 Limitada)",
     established: 2019,
@@ -363,14 +364,22 @@ const raw = [
     established: 2025,
     license: "Curacao, License No. OGL/2024/296/1093",
     gameTypes: ["Slots", "Originals", "Live Casino", "Sports Betting", "Esports"],
+    games: [
+      "Total number of games: Over 500",
+      "Total number of live games: Over 500",
+      "Total number of slots: Over 14,000",
+    ],
     providers:
       "Evolution, Pragmatic Play, NetEnt, Play'n GO, Nolimit City, Red Tiger, Big Time Gaming, Playtech, Yggdrasil, Playson, Betsoft Gaming, Habanero, Aviatrix",
+    providerCount: ["Slots: 147 providers", "Live: 20 providers", "Other: 19 providers"],
     currencies: "100+ currencies including USD, EUR, PLN, UZS, TRY, INR, BRL, GBP, CHF, NOK, SEK",
     payments:
       "Visa/Mastercard, Apple Pay, Google Pay, Skrill, Neteller, Blik, Binance Pay, UPI, Paytm, PhonePe, bKash, Nagad, Payme, Click, UZCARD, HUMO, Sberpay, Cryptocurrency and other regional methods",
     limits:
       "Minimum withdrawal EUR 3. No daily or monthly withdrawal limits. Per-transaction limits depend on the payment system.",
-    availableIn: "Germany, Austria, Switzerland, Portugal, Poland, Spain, Uzbekistan, Russia, Egypt",
+    availableIn:
+      "Bangladesh (BD), Benin (BJ), Burkina Faso (BF), Cameroon (CM), Côte d’Ivoire (CI), Egypt (EG), India (IN), Morocco (MA), Poland (PL), Russia (RU), Senegal (SN), Sri Lanka (LK), Tanzania (TZ), Togo (TG), Uzbekistan (UZ), Portugal (PT) and DACH (Germany, Austria, Switzerland)",
+    welcomeBonus: "Casino Welcome Package up to €1,500 + 150 Free Spins (FS)",
     keyFeatures: [
       "Thousands of slots, table games, live dealer games and virtual sports",
       "Large sportsbook with diverse markets and live betting",
@@ -382,7 +391,7 @@ const raw = [
     support:
       "Email by language: support-en@cold.bet (English), support-ru@cold.bet (Russian), support-uz@cold.bet (Uzbek), support-pl@cold.bet (Polish), support-fr@cold.bet (French). Complaints and feedback: complaints@cold.bet. Blocked account queries: block@cold.bet",
     tags: ["new", "crypto", "mobile"],
-    countries: [],
+    countries: ["india"],
     image: "/img/coldbet.jfif",
   },
   {

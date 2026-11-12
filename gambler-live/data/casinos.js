@@ -114,7 +114,7 @@ const raw = [
     availableIn: "Australia, Germany, Austria, Canada, New Zealand, Switzerland, Norway, Ireland, Denmark, Italy",
     tags: ["crypto"],
     countries: ["australia", "canada"],
-    image: "/img/voodoo.jfif",
+    image: "/img/voodoo.png",
   },
   {
     slug: "slotsgem",
@@ -133,7 +133,7 @@ const raw = [
     support: "24-hour live chat, email at support@slotsgem.com",
     tags: ["new"],
     countries: ["australia", "canada"],
-    image: "/img/slotsgem.jfif",
+    image: "/img/Slotsgem.png",
   },
   {
     slug: "lucky-star",
@@ -154,7 +154,7 @@ const raw = [
     support: "Email, on-site chat, call centers",
     tags: ["crypto"],
     countries: ["india"],
-    image: "/img/lucky-star.jfif",
+    image: "/img/luckystar.jpg",
   },
   {
     slug: "milkyway",
@@ -173,7 +173,7 @@ const raw = [
     responsibleGambling: "https://milkyway.casino/responsible-gaming",
     tags: ["crypto"],
     countries: ["canada", "australia"],
-    image: "/img/milkyway.webp",
+    image: "/img/milkyway.jpeg",
   },
   {
     slug: "winrolla",
@@ -195,7 +195,7 @@ const raw = [
     support: "Live chat, email",
     tags: ["new", "crypto"],
     countries: ["australia", "canada"],
-    image: "/img/winrolla.jfif",
+    image: "/img/Winrolla.jpeg",
   },
   {
     slug: "sirbetalot",
@@ -246,7 +246,7 @@ const raw = [
     responsibleGambling: "Self-exclusion and account closure",
     tags: ["new", "crypto", "fast-payout"],
     countries: [],
-    image: "/img/spindragons.png",
+    image: "/img/spindragons.jpeg",
   },
   {
     slug: "bangawin",
@@ -322,7 +322,7 @@ const raw = [
       "18+ only. Self-exclusion on request via block@spinbetter.com. Complaints via claims@spinbetter.com.",
     tags: ["crypto", "fast-payout", "mobile"],
     countries: [],
-    image: "/img/spinbetter.png",
+    image: "/img/SpinBetter.jpeg",
   },
   {
     slug: "neospin",
