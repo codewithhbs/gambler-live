@@ -323,7 +323,7 @@ const raw = [
       "18+ only. Self-exclusion on request via block@spinbetter.com. Complaints via claims@spinbetter.com.",
     tags: ["crypto", "fast-payout", "mobile"],
     countries: [],
-    image: "/img/SpinBetter.jpeg",
+    image: "/img/spinbetter.jpeg",
   },
   {
     slug: "neospin",
