@@ -173,7 +173,7 @@ const raw = [
     responsibleGambling: "https://milkyway.casino/responsible-gaming",
     tags: ["crypto"],
     countries: ["canada", "australia"],
-    image: "/img/milkyway.jpeg",
+    image: "/img/milky.jpeg",
   },
   {
     slug: "winrolla",
@@ -246,7 +246,7 @@ const raw = [
     responsibleGambling: "Self-exclusion and account closure",
     tags: ["new", "crypto", "fast-payout"],
     countries: [],
-    image: "/img/spindragons.jpeg",
+    image: "/img/spindragon.jpeg",
   },
   {
     slug: "bangawin",
@@ -323,7 +323,7 @@ const raw = [
       "18+ only. Self-exclusion on request via block@spinbetter.com. Complaints via claims@spinbetter.com.",
     tags: ["crypto", "fast-payout", "mobile"],
     countries: [],
-    image: "/img/spinbetter.jpeg",
+    image: "/img/spinbe.jpeg",
   },
   {
     slug: "neospin",
