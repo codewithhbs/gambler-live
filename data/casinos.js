@@ -120,7 +120,7 @@ const raw = [
   {
     slug: "slotsgem",
     name: "Slotsgem",
-    visitUrl: "https://mio.novarao.com/redirect.aspx?lpid=601&bid=1487&pid=114594&subid={REPLACE_CLICKID}",
+    visitUrl: "https://mio.novarao.com/redirect.aspx?lpid=601&bid=1487&pid=114594&subid=",
     tagline: "45+ currencies accepted",
     website: "https://slotsgem.net",
     established: 2025,
@@ -131,7 +131,7 @@ const raw = [
     limits:
       "Minimum deposit 10. Maximum withdrawal of EUR 4,000 per day, EUR 16,000 per week and EUR 50,000 per month (or the equivalent in another currency). Higher limits may apply to VIP players. Progressive jackpot wins are paid out in full.",
     availableIn:
-      "Sweden, Australia, Canada, Spain, Italy, Greece, Finland, Czech Republic, Poland, Slovenia, Slovakia, Croatia, Austria, Denmark, Switzerland, Hungary, Ireland, Romania, Norway, New Zealand",
+      "Australia, Canada, Spain, Italy, Finland, Czech Republic, Poland, Slovenia, Slovakia, Croatia, Austria, Denmark, Switzerland, Hungary, Ireland, Romania, Norway, New Zealand",
     support: "24-hour live chat, email at support@slotsgem.com",
     tags: ["new"],
     countries: ["australia", "canada"],
