@@ -101,7 +101,7 @@ const raw = [
   {
     slug: "voodoo-casino",
     name: "Voodoo Casino",
-    visitUrl: "https://voodoo-redirector.com/aui02jzpt?visit_id={click_id}&webID={affiliate_id}",
+    visitUrl: "https://voodoo-redirector.com/aui02jzpt?visit_id=",
     tagline: "Slots-focused casino",
     website: "https://www.voodoo.casino",
     established: 2023,
@@ -140,7 +140,7 @@ const raw = [
   {
     slug: "lucky-star",
     name: "Lucky Star",
-    visitUrl: "https://luckymdmq.life/?p=1c9h&open=register&sub2=SITE_NAME",
+    visitUrl: "https://luckymdmq.life/?p=1c9h&open=register&sub2=",
     tagline: "24/7 multilingual support",
     operator: "WUNGroup B.V.",
     established: 2024,
